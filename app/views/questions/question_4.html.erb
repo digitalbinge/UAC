@@ -14,20 +14,19 @@
 
   <div class"question-box">
 
-  <h1>Question 4</h1>
+    <h1>Question 4</h1>
 
-  <p class="question">How likely would you be to recomment a UAC Indentured Career to your family and friends?</p>
+    <p class="question">How likely would you be to recomment a UAC Indentured Career to your family and friends?</p>
 
     <div class="form-check">
 
     <%= radio_button_tag(:answer, "answer 1") %>
-    <%= label_tag(:answer_one, "Likely") </%>   <br>
+    <%= label_tag(:answer_one, "Likely") %>   <br>
     <%= radio_button_tag(:answer, "answer 2") %>
     <%= label_tag(:answer_two, "answer2") %>   <br>
     <%= radio_button_tag(:answer, "answer 3") %>
     <%= label_tag(:answer_three, "answer3") %>   <br>
-    <%= link_to "submit", root_path, class: "btn btn-secondary" %>
+    <%= link_to "submit", products_path, class: "btn btn-secondary" %>
 
     </div>
   </div>
-</div>
