@@ -1,0 +1,54 @@
+// Place all the styles related to the Questions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+        background: rgb(46,54,56);
+        margin: 0;
+    }
+
+.dimmer {
+        background-color: rgba(46,54,56,0.4);
+        height: 100vh;
+}
+
+body::after {
+        content: "";
+         background-image: image-url('background.jpg');
+         background-size: 100%;
+         top: 0;
+         left: 0;
+         bottom: 0;
+         right: 0;
+         position: absolute;
+         z-index: -1;
+          }
+
+.question-box {
+                background-color: rgba(28,24,20,0.6);
+                margin-top: 60px;
+                padding-top: 10px;
+                padding-bottom: 40px;
+                margin-left: 275px;
+                margin-right: 275px;
+}
+
+.dimmer h1 {
+            padding-top: 60px;
+            }
+
+h1 {
+    color: #b8320b;
+    font-family: Orbitron;
+    padding-top: 40px;
+  }
+
+p {
+  font-size: 20px;
+  }
+
+* {
+  font-family: open sans condensed;
+  color: #d4f5f5;
+  text-align: center;
+  }
