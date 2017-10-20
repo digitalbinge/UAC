@@ -11,31 +11,8 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 20171019235258) do
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "cart_items", force: :cascade do |t|
-    t.integer "qty"
-    t.bigint "product_id"
-    t.bigint "cart_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "size"
-    t.index ["cart_id"], name: "index_cart_items_on_cart_id"
-    t.index ["product_id"], name: "index_cart_items_on_product_id"
-  end
-
-  create_table "carts", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "orders", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "products", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -44,7 +21,6 @@ ActiveRecord::Schema.define(version: 20171019235258) do
     t.string "image"
     t.integer "price"
   end
-
   create_table "roles", force: :cascade do |t|
     t.string "name"
     t.string "resource_type"
@@ -55,7 +31,6 @@ ActiveRecord::Schema.define(version: 20171019235258) do
     t.index ["name"], name: "index_roles_on_name"
     t.index ["resource_type", "resource_id"], name: "index_roles_on_resource_type_and_resource_id"
   end
-
   create_table "user_products", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "product_id"
@@ -66,7 +41,6 @@ ActiveRecord::Schema.define(version: 20171019235258) do
     t.index ["product_id"], name: "index_user_products_on_product_id"
     t.index ["user_id"], name: "index_user_products_on_user_id"
   end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -83,7 +57,6 @@ ActiveRecord::Schema.define(version: 20171019235258) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
-
   create_table "users_roles", id: false, force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "role_id"
@@ -91,9 +64,6 @@ ActiveRecord::Schema.define(version: 20171019235258) do
     t.index ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id"
     t.index ["user_id"], name: "index_users_roles_on_user_id"
   end
-
-  add_foreign_key "cart_items", "carts"
-  add_foreign_key "cart_items", "products"
   add_foreign_key "user_products", "products"
   add_foreign_key "user_products", "users"
 end

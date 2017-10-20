@@ -1,0 +1,33 @@
+<div class="dimmer">
+
+  <h1>Hello, and welcome to the Union Aerospace Corporation</h1>
+
+  <p>As industry leaders in several fields, including biological
+     and xenobiological research, bleeding-edge weapons <br> development
+     and energy production, as well as being the first large-scale
+     entity to establish permanent <br> facilities on both Mars and it’s
+     moon Deimos, the UAC has been pivotal in shaping the course of
+     mankind.
+  </p>
+
+  <p>Before we begin, please take the time to answer a few simple questions:</p>
+
+  <div class="question-box">
+
+    <h1>Question 2</h1>
+
+    <p class="question">How does the knowledge of your own cosmic insignificance make you feel?</p>
+
+    <div class="form-check">
+
+      <%= radio_button_tag(:answer, "answer 1") %>
+      <%= label_tag(:answer_one, "Apathetic") %>   <br>
+      <%= radio_button_tag(:answer, "answer 2") %>
+      <%= label_tag(:answer_two, "Languid") %>   <br>
+      <%= radio_button_tag(:answer, "answer 3") %>
+      <%= label_tag(:answer_three, "Prostrated") %>   <br>
+      <%= link_to "submit", q3_path, class: "btn btn-secondary" %>
+      
+    </div>
+  </div>
+</div>
