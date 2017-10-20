@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'questions/question_1', to: 'questions#question_1', as: :q1
+  root 'questions#question_1'
 
   get 'questions/question_2', to: 'questions#question_2', as: :q2
 
@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   resources :products
   devise_for :users
 
-  root 'products#index'
 
   post '/add_product', to: 'user_product#add_product'
 

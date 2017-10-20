@@ -1,3 +1,8 @@
+<%= render 'shared/navbar' %>
+<div class="navbar-buffer"></div>
+<div class="navbar-buffer"></div>
+
+
 <% @cart_items.each do |item| %>
 	<%= image_tag item.product.image %> <br>
 	<%= item.product.price %> <br>
