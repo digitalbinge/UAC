@@ -2,6 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body::after {
+  content: "";
+  background-image: image-url('background.jpg');
+  background-size: 100%;
+  top: 0;
+	left: 0;
+  bottom: 0;
+  right: 0;
+	position: absolute;
+  z-index: -1;
+}
+
 .product-container {
 	height: 400px;
 	padding: 20px;
@@ -14,6 +26,10 @@
 
 .navbar-buffer {
 	height: 56px;
+}
+
+ h1 {
+	font-family: Orbitron;
 }
 
 body {
