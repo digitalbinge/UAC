@@ -1,20 +1,22 @@
 <div class="navbar-buffer"></div>
+<div class="content-box">
+
+  <h1>Products</h1>
+  
+</div>
 
 <p id="notice"><%= notice %></p>
-
-<h1>Products</h1>
-
 
 <% if @current_user.has_role? :admin %>
   <%= link_to 'New Product', new_product_path, class: "btn btn-secondary" %>
 <% end %>
 
-  
+
 <div class="row">
   <% @products.each do |product| %>
     <div class="col-lg-12 text-center">
       <figure class="figure product-container text-center">
-        <%= link_to (image_tag product.image, class: "img-fluid product-image"), product_path(product) %>  
+        <%= link_to (image_tag product.image, class: "img-fluid product-image"), product_path(product) %>
           <figcaption class="figure-caption">
             <%= product.name %> <br>
             <%= product.price %> <br>
@@ -29,4 +31,3 @@
     </div>
   <% end %>
 </div>
-

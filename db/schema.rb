@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 20171019235258) do
     t.index ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id"
     t.index ["user_id"], name: "index_users_roles_on_user_id"
   end
+
   add_foreign_key "user_products", "products"
   add_foreign_key "user_products", "users"
 end
