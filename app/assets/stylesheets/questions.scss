@@ -8,6 +8,8 @@ body {
 
 .dimmer {
   background-color: rgba(46,54,56,0.4);
+  height: 100%;
+  z-index: -99;
 }
 
 .container-questions {
@@ -28,6 +30,7 @@ body {
   padding-bottom: 40px;
   margin-left: 275px;
   margin-right: 275px;
+  border-radius: 6px;
 }
 
 .dimmer h1 {
