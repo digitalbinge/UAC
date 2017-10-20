@@ -1,0 +1,18 @@
+<div class="text-center">
+	<%= form_for :user_products, url: add_product_path, :html => { :class => "form-horizontal product" } do %>
+
+	  	<%= hidden_field_tag :product_id, @product.id %>
+	    QTY: <%= select_tag(:qty, options_for_select(@product_qty)) %>
+	    Size: <%= select_tag(:size, options_for_select(@product_size)) %> <br><br>
+	
+		<% if @current_user.has_role? :admin %>
+			<%= link_to 'Edit', edit_product_path(@product), class: 'btn btn-secondary' %>
+		<% else %>
+		    <%= submit_tag 'Add to cart', class: 'btn btn-secondary' %>
+		<% end %>
+
+		<%= link_to 'View Cart', view_cart_path, class: 'btn btn-secondary' %> <br> <br>
+		<%= link_to 'Back to products', products_path, class: 'btn btn-secondary' %>
+
+	<% end %>
+</div>

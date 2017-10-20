@@ -1,4 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+<div class="text-center">
+	<%= image_tag @product.image %> <br>
+	<%= @product.name %> <br>
+	<%= @product.price %> <br>
+	<%= @product.description %>
+
+<%= render 'cart', cart: @cart_items %>
+
+</div>
+

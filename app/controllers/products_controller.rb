@@ -12,6 +12,10 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
+    @user = current_user.email
+    @current_user = current_user
+    @product_qty = [1,2,3,4,5]
+    @product_size = ["S", "M", "L"]
   end
 
   # GET /products/new
