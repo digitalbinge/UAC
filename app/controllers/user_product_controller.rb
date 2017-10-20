@@ -8,14 +8,16 @@ class UserProductController < ApplicationController
 
 	def cart
 		@cart_items = UserProduct.all
+		@user = current_user.email
+    @current_user = current_user
 	end
 
 	def edit
-		
+
 	end
 
 	def show
-		
+
 	end
 
 end

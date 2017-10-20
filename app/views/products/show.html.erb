@@ -1,12 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<div class="text-center">
-	<%= image_tag @product.image %> <br>
-	<%= @product.name %> <br>
-	<%= @product.price %> <br>
-	<%= @product.description %>
+<div class="show-container">
+	<div class="row">
+		<div class="col-lg-6">
 
-<%= render 'cart', cart: @cart_items %>
+			<%= image_tag @product.image, class: "img-fluid" %>
+		</div>
+		<div class="col-lg-6">
+			<h1><%= @product.name %></h1>
+			<p><%= @product.description %></p>
+			<p>Cost: $<%= @product.price %></p>
 
+		<%= render 'cart', cart: @cart_items %>
+		</div>
+	</div>
 </div>
-

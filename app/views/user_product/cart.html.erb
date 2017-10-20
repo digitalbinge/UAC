@@ -2,12 +2,16 @@
 <div class="navbar-buffer"></div>
 <div class="navbar-buffer"></div>
 
-
-<% @cart_items.each do |item| %>
-	<%= image_tag item.product.image %> <br>
-	<%= item.product.price %> <br>
-	<%= item.quantity %> <br>
-	<%= item.size %> <br>
-	<%= link_to 'Edit', edit_product_path(item.product_id), class: 'btn btn-secondary' %> <br>
-<% end %>
-
+<div class="row">
+	<% @cart_items.each do |item| %>
+	<div class="col-lg-2">
+		<%= image_tag item.product.image, class: "thumbnail-img" %> <br>
+	</div>
+	<div class="col-lg-2">
+		Price: $<%= item.product.price %> <br>
+		Qty: <%= item.quantity %> <br>
+		Size: <%= item.size %> <br>
+		<%= link_to 'Edit', edit_product_path(item.product_id), class: 'btn btn-secondary' %>
+	</div>
+	<% end %>
+</div>

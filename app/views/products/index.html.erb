@@ -3,13 +3,17 @@
   <div class="navbar-buffer"></div>
 
   <h1>Products</h1>
-  
+
 
   <p id="notice"><%= notice %></p>
+
 
   <% if @current_user.has_role? :admin %>
     <%= link_to 'New Product', new_product_path, class: "btn btn-secondary" %>
   <% end %>
+
+  <br>
+  <br>
 
 
   <% @products.each do |product| %>
@@ -18,11 +22,10 @@
         <%= link_to (image_tag product.image, class: "img-fluid product-image"), product_path(product) %>
           <figcaption class="figure-caption">
             <%= product.name %> <br>
-            <%= product.price %> <br>
-            <%= product.description %> <br>
+            Cost: $<%= product.price %><br>
             <% if @current_user.has_role? :admin %>
-              <%= link_to 'Show', product, class: 'btn btn-secondary' %> |
-              <%= link_to 'Edit', edit_product_path(product), class: 'btn btn-secondary' %> |
+              <%= link_to 'Show', product, class: 'btn btn-secondary' %>
+              <%= link_to 'Edit', edit_product_path(product), class: 'btn btn-secondary' %>
               <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-secondary' %>
             <% end %>
           </figcaption>
